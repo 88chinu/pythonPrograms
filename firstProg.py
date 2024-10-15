@@ -1,4 +1,4 @@
-#Learing Python
+#Leaning Python
 print ('Hello', 'world')
 
 #Print using variable
@@ -18,13 +18,13 @@ if (x<z):
 
 
 #Object statement
-friutes = ["apple", "banana", "orange"] 
+fruits = ["apple", "banana", "orange"] 
 f = ("apple", "banana", "orange")
-a, b, c = friutes
+a, b, c = fruits
 print(a)
 print(b)
 print(c)
-print(type(friutes))
+print(type(fruits))
 print(type(f))
 
 #Global variable
