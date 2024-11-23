@@ -48,4 +48,13 @@ int main
             printf("You guessed too high!\n");
         }
     }
+
+        // If Guessing is more than required guesses, shows this
+    // output.
+    if (!flag) {
+        printf("\nThe number is %d\n", x);
+        printf("\tBetter Luck Next time!\n");
+    }
+
+    return 0;
 }
