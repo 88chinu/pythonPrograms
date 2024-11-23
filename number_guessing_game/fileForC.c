@@ -23,4 +23,29 @@ int main
     printf("\n\tYou've only %d chances to guess the "
            "integer!\n\n",
            total_chances);
+   // for calculation of minimum number of guesses depends
+    // upon range
+    while (count < total_chances) {
+        count++;
+
+        // Taking guessing number as input
+        printf("Guess a number: ");
+        scanf("%d", &guess);
+
+        // Condition testing
+        if (x == guess) {
+            printf(
+                "Congratulations you did it in %d try!\n",
+                count);
+            // Once guessed, loop will break
+            flag = 1;
+            break;
+        }
+        else if (x > guess) {
+            printf("You guessed too small!\n");
+        }
+        else if (x < guess) {
+            printf("You guessed too high!\n");
+        }
+    }
 }
