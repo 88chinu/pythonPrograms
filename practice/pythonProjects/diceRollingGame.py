@@ -1,14 +1,28 @@
 import random
 
-print("Welcome to the Dice Rolling Game!")
+print("Welcome to the Dice Game!")
+count = 0
+
 while True:
-    choice = input("Roll the Dice.(y/n)").lower()
-    if choice == "y":
-        dice1 = random.randint(1, 6)
-        dice2 = random.randint(1, 6)
-        print(f'({dice1},{dice2})')
-    elif choice == "n":
-        print("Thank you for playing!")
+    choice = input("Roll dice? (y/n): ")
+
+    if choice == 'y':
+        n = int(input("How many dice? "))
+        count += 1
+
+        if n < 1:
+            print("Please enter a positive number.")
+            continue
+
+        for i in range(n):
+            print(random.randint(1, 6), end=" ")
+
+        print("\nTotal rolls:", count)
+
+    elif choice == 'n':
+        print("Thanks for playing!")
+        print(f"You rolled the dice {count} times")
         break
+
     else:
-        print("Invalid choice!")
+        print("Invalid choice")
