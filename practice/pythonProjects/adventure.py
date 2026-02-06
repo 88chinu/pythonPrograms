@@ -1,28 +1,29 @@
 import random
 
+name = input("Type your name: ")
+print(f"\nWelcome {name} to this adventure game!")
+
 def play_game():
-    name = input("\nType your name: ")
-    print(f"\nWelcome {name} to this adventure!")
 
     health = 100
     print("\nYou are on a dirt road. Go LEFT or RIGHT.")
     answer = input("Choose direction: ").lower()
 
-    if answer == "left" or "l":
+    if answer in ["left", "l"]:
         choice = input("River ahead. Walk or swim? ").lower()
 
-        if choice == "swim" or "s":
-            print("An alligator attacks you!")
+        if choice in ["swim","s"]:
+            print("An alligator attacks you!\n")
             print("You lose!")
-        elif choice == "walk" or "w":
+        elif choice in ["walk", "w"]:
             print("You safely reach a village. You WIN!")
         else:
             print("Invalid option.")
 
-    elif answer == "right" or "r":
+    elif answer in ["right","r"]:
         choice = input("You see a bridge. Cross or go back (c/b)? ").lower()
 
-        if choice == "c" or "c":
+        if choice in ["cross","c"]:
             print("You meet a stranger and find treasure. You WIN!")
         else:
             print("You returned home. Game over.")
@@ -34,7 +35,11 @@ def play_game():
 while True:
     play_game()
 
-    again = input("\nDo you want to play again? (yes/no): ").lower()
-    if again == "no" or "n":
-        print("Thanks for playing!")
+    again = input("\nPlay again? (y/n): ").strip().lower()
+
+    if again in ["y", "yes"]:
+        continue
+    else:
+        print(f'Thanks for playing {name}!')
         break
+
