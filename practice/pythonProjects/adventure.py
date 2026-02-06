@@ -1,37 +1,40 @@
-name = input("Type your name:")
-print("Welcom", name, "to this adventure!")
+import random
 
-print("You are on a dirt road, it has come to an end and you can go Left or Right. Which way you like to go ?")
+def play_game():
+    name = input("\nType your name: ")
+    print(f"\nWelcome {name} to this adventure!")
 
-answer = input().lower()
+    health = 100
+    print("\nYou are on a dirt road. Go LEFT or RIGHT.")
+    answer = input("Choose direction: ").lower()
 
-if answer == "left":
-    ans = ("You come to a river, you can walk around it or swim accross? Type walk to walk around and swim to swim accross: ").lower()
-    if ans == "swim":
-        print("You swim across and face an alligator.")
-    elif ans == "walk":
-        print("You walked for many miles in forest, you got miss directed and huntted by a Tiger and you lost the game. ")
-    else:
-        print("Not a valid option.")
+    if answer == "left" or "l":
+        choice = input("River ahead. Walk or swim? ").lower()
 
-elif answer == "right":
-    ans = input("You come to a bridge, it looks wobbly, do you want to cross it or head back(c/b)").lower()
-    if ans == "b":
-        print("You go back and loose")
-    elif ans == "c":
-        ans = input("You cross the bridge and meet a stranger. Do you talk to them (yes/no)? ")
-
-        if answer == "yes":
-            print("You talk to the stanger and they give you gold. You WIN!")
-        elif answer == "no":
-            print("You ignore the stranger and they are offended and you lose.")
+        if choice == "swim" or "s":
+            print("An alligator attacks you!")
+            print("You lose!")
+        elif choice == "walk" or "w":
+            print("You safely reach a village. You WIN!")
         else:
-            print('Not a valid option. You lose.')
+            print("Invalid option.")
+
+    elif answer == "right" or "r":
+        choice = input("You see a bridge. Cross or go back (c/b)? ").lower()
+
+        if choice == "c" or "c":
+            print("You meet a stranger and find treasure. You WIN!")
+        else:
+            print("You returned home. Game over.")
+
     else:
-        print('Not a valid option. You lose.')
+        print("Invalid direction.")
 
-else:
-    print("Not a valid option. Try again!")
+# -------- MAIN LOOP --------
+while True:
+    play_game()
 
-
-print("Thank you for trying ", name )
+    again = input("\nDo you want to play again? (yes/no): ").lower()
+    if again == "no" or "n":
+        print("Thanks for playing!")
+        break
