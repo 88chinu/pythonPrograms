@@ -41,7 +41,7 @@ def determine_winner(user_choice, computer_choice):
         losses += 1
 
 def show_scorecard():
-    print("\n📊 FINAL SCORE CARD")
+    print("\n FINAL SCORE CARD")
     print("-" * 25)
     print(f"🏆 Wins   : {wins}")
     print(f"💀 Losses : {losses}")
