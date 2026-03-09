@@ -1,4 +1,4 @@
-# print('Chinmaya')
+# print('Chinampa')
 # print('*'*10)
 from turtledemo.penrose import start
 
